@@ -1,6 +1,8 @@
+using StoreManagement.Domain.Entities.Abstractions;
+
 namespace StoreManagement.Domain.Entities.Companies;
 
-public interface ICompanyRepository
+public interface ICompanyRepository : IBaseRepository<Company>
 {
     
 }

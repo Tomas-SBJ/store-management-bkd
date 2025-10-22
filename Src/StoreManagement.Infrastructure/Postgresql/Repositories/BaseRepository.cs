@@ -1,13 +1,18 @@
+using Microsoft.EntityFrameworkCore;
 using StoreManagement.Domain.Entities.Abstractions;
+using StoreManagement.Infrastructure.Postgresql.Contexts;
 
 namespace StoreManagement.Infrastructure.Postgresql.Repositories;
 
 public class BaseRepository<TEntity>(
-    
-) : IBaseRepository<TEntity>
+    StoreManagementContext context
+) : IBaseRepository<TEntity> where TEntity : Base
 {
+    protected readonly DbSet<TEntity> Entity = context.Set<TEntity>();
+    
     public async Task<TEntity> CreateAsync(TEntity entity)
     {
-        throw new ArgumentException();
+        var result = await Entity.AddAsync(entity);
+        return result.Entity;
     }
 }
