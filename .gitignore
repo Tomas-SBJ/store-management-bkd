@@ -1,0 +1,117 @@
+# -------------------------------
+# .NET / C# / ASP.NET Core
+# -------------------------------
+bin/
+obj/
+[Bb]uild/
+[Bb]in/
+[Oo]bj/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# -------------------------------
+# Visual Studio / VSCode
+# -------------------------------
+.vs/
+.vscode/
+*.code-workspace
+
+# -------------------------------
+# JetBrains Rider / ReSharper
+# -------------------------------
+.idea/
+.idea/*
+*.DotSettings.user
+_ReSharper.Caches/
+_ReSharper*/
+*.sln.iml
+
+# -------------------------------
+# Logs, temporários e caches
+# -------------------------------
+*.log
+*.tlog
+*.pidb
+*.svclog
+*.userprefs
+*.cache
+*.dbmdl
+*.bak
+*.tmp
+*.ncb
+*.opendb
+*.VC.db
+*.VC.VC.opendb
+
+# -------------------------------
+# Configurações locais / OS
+# -------------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# -------------------------------
+# Test / Coverage
+# -------------------------------
+TestResults/
+*.coverage
+*.coveragexml
+*.testsettings
+*.trx
+*.vspx
+*.vsmdi
+
+# -------------------------------
+# Pacotes e dependências
+# -------------------------------
+packages/
+*.nupkg
+*.snupkg
+*.nuspec
+*.dll
+*.exe
+*.pdb
+*.mdb
+
+# -------------------------------
+# Publish / Deploy / Build Output
+# -------------------------------
+wwwroot/
+publish/
+dist/
+node_modules/
+Generated_Code/
+
+# -------------------------------
+# Rider / Visual Studio Config
+# -------------------------------
+.idea/
+*.iml
+*.sln.iml
+.idea/.idea/
+.idea/.idea.*
+.idea/.*
+.idea/**
+
+# -------------------------------
+# Azure / Docker / Outros
+# -------------------------------
+.localhistory/
+.vshistory/
+docker-compose.override.yml
+.env
+*.env.local
+
+# -------------------------------
+# Rider plugin cache
+# -------------------------------
+.gradle/
+.recommenders/
+.ionide/
