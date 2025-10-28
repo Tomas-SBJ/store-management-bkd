@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using StoreManagement.Domain.Entities.Abstractions;
 using StoreManagement.Infrastructure.Postgresql.Contexts;
@@ -15,4 +16,14 @@ public class BaseRepository<TEntity>(
         var result = await Entity.AddAsync(entity);
         return result.Entity;
     }
+
+    public async Task<TEntity?> SelectOneByAsync(Expression<Func<TEntity, bool>> predicate)
+    {
+        return await Entity.FirstOrDefaultAsync(predicate);
+    }
+
+    public async Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> predicate) =>
+        await Entity.AnyAsync(predicate);
+
+    public void Delete(TEntity entity) => Entity.Remove(entity); 
 }

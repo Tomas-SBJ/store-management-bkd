@@ -11,6 +11,6 @@ public class CompanyMapping : BaseMapping<Company>
     protected override void MapEntity(EntityTypeBuilder<Company> builder)
     {
         builder.Property(x => x.Code).HasColumnName("code").IsRequired();
-        builder.Property(x => x.Name).HasColumnName("name").HasMaxLength(50).IsRequired();
+        builder.Property(x => x.Name).HasColumnName("name").HasMaxLength(25).IsRequired();
     }
 }
