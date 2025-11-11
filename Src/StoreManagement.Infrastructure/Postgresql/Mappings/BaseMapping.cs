@@ -24,6 +24,7 @@ public abstract class BaseMapping<TEntity> : IBaseMapping where TEntity : Base
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Id).HasColumnName("id").IsRequired();
         builder.Property(x => x.CreatedAt).HasColumnName("created_at").IsRequired();
+        builder.Property(x => x.UpdatedAt).HasColumnName("updated_at");
     }
 
     protected abstract void MapEntity(EntityTypeBuilder<TEntity> builder);
