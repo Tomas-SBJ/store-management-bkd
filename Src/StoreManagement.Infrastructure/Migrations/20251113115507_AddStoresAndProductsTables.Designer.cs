@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using StoreManagement.Infrastructure.Postgresql.Contexts;
@@ -11,9 +12,11 @@ using StoreManagement.Infrastructure.Postgresql.Contexts;
 namespace StoreManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(StoreManagementContext))]
-    partial class StoreManagementContextModelSnapshot : ModelSnapshot
+    [Migration("20251113115507_AddStoresAndProductsTables")]
+    partial class AddStoresAndProductsTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

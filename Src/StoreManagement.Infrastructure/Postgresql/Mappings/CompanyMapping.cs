@@ -13,5 +13,13 @@ public class CompanyMapping : BaseMapping<Company>
         builder.Property(x => x.Code).HasColumnName("code").IsRequired();
         builder.Property(x => x.Name).HasColumnName("name").HasMaxLength(25).IsRequired();
         builder.Property(x => x.CountryCode).HasColumnName("country_code").HasMaxLength(3).IsRequired();
+        
+        builder
+            .HasMany(company => company.Stores)
+            .WithOne(store => store.Company)
+            .HasForeignKey(company => company.CompanyId)
+            .OnDelete(DeleteBehavior.Restrict);
+        
+        builder.HasIndex(company => company.Code).IsUnique();
     }
 }
