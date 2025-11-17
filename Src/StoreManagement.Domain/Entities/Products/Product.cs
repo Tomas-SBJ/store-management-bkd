@@ -13,7 +13,7 @@ public class Product : Base
     public Guid StoreId { get; private set; }
     public virtual Store Store { get; private set; }
 
-    public Product Create(int code, string name, string description, decimal price, Store store)
+    public static Product Create(int code, string name, string description, decimal price, Store store)
     {
         return new Product
         {
@@ -31,6 +31,6 @@ public class Product : Base
         Name = name;
         Description = description;
         Price = price;
-        UpdatedAt = DateTime.Now;
+        UpdatedAt = DateTime.UtcNow;
     }
 }

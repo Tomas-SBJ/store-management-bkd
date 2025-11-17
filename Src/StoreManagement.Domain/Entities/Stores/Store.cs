@@ -14,7 +14,7 @@ public class Store : Base
     public virtual Company Company { get; private set; }
     public virtual ICollection<Product> Products { get; private set; } = [];
 
-    public Store Create(int code, string name, string address, Company company)
+    public static Store Create(int code, string name, string address, Company company)
     {
         return new Store
         {
@@ -30,6 +30,6 @@ public class Store : Base
     {
         Name = name;
         Address = address;
-        UpdatedAt = DateTime.Now;
+        UpdatedAt = DateTime.UtcNow;
     }
 }

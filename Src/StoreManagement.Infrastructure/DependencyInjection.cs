@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StoreManagement.Domain.Entities.Companies;
+using StoreManagement.Domain.Entities.Products;
+using StoreManagement.Domain.Entities.Stores;
 using StoreManagement.Infrastructure.Postgresql.Contexts;
 using StoreManagement.Infrastructure.Postgresql.Repositories;
 using StoreManagement.Infrastructure.Transactions;
@@ -20,6 +22,8 @@ public static class DependencyInjection
     private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
         services.AddScoped<ICompanyRepository, CompanyRepository>();
+        services.AddScoped<IStoreRepository, StoreRepository>();
+        services.AddScoped<IProductRepository, ProductRepository>();
 
         return services;
     }
